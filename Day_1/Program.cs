@@ -240,6 +240,7 @@ for(int a=1;a<=6; a++)
     }
         Console.WriteLine();
     }
+Console.WriteLine("Bir değişiklik yapıldı");
 
 
 
