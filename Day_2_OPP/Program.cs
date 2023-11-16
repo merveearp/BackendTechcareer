@@ -63,6 +63,7 @@ Console.WriteLine(book);
 //Bellekte ek hafızada tutulur
 //new anahtar sözcüğü kullanmadan oluşturulabilir.
 //Büyük veri setleri için değil,küçük veri setleri için uygundur.
+//Veri değişebilir.
 
 //*****************RECORD***************
 //.Net5 ve C# 9.0 İLE TANITILDI.

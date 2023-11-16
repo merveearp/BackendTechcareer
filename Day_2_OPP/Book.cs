@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Day_2_OPP;
 
-public struct Book
+public struct Book 
 {
     public string Adı;
     public string Yazar;
