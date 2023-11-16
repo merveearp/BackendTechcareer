@@ -6,7 +6,7 @@ List<int> numbers = new List<int>() {1,2,3,4,5,6,7,8,9,10};
 numbers.Add(11);
 numbers.Add(10);
 numbers.AddRange(new int[] { 25, 26, 77, 30 });
-//1. Yöntem
+////1. Yöntem
 //foreach (int number in numbers)
 //{
 //    Console.WriteLine(number);
