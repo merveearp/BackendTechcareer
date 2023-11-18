@@ -21,7 +21,7 @@ public class BookRepository :IBookRepository
             new Book { Id = 1,CategoryId="A", Description = "Güzel bir kitap", Price = 250, Stock = 2500, Title = "Sherlock Holmes" },
             new Book { Id = 2,CategoryId = "A",  Description = "Akıcı bir kitap", Price = 120, Stock = 500, Title = "Arsen Lüpen" },
             new Book { Id = 3,CategoryId = "B", Description = "Çok değerli bir kitap", Price = 300, Stock = 5000, Title = "Nutuk" },
-            new Book { Id = 4,CategoryId="B", Description = "Güzel bir kitap", Price = 133, Stock = 1452, Title = "Cengiz Han ın Haytı" },
+            new Book { Id = 4,CategoryId="B", Description = "Güzel bir kitap", Price = 133, Stock = 1452, Title = "Cengiz Han ın Hayatı" },
             new Book { Id = 5,CategoryId = "B",  Description = "Akıcı bir kitap", Price = 684, Stock = 544, Title = "Napolyon" },
             new Book { Id = 6,CategoryId = "B", Description = "Çok değerli bir kitap", Price = 753, Stock = 180, Title = "Sümerin Göksel Ataları" },
             new Book { Id = 7,CategoryId="C", Description = "Güzel bir kitap", Price = 250, Stock = 2500, Title = "İyi Hissetme" },

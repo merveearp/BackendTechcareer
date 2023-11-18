@@ -15,7 +15,7 @@ Book book = new Book()
 {
     Id = 5,
     Description = "TEST",
-    Price =2500,
+    Price = 2500,
     Stock = 2000,
     Title = "Test"
 };
