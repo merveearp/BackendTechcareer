@@ -37,7 +37,27 @@ public class PlayerService : IPlayerService
 
     public ReturnModel<PlayerResponseDto> Delete(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+         var player = _playerRepository.GetById(id);
+            _playerRepository.Delete(id);
+            var response = _mapper.Map < PlayerResponseDto>(player);
+            return new ReturnModel<PlayerResponseDto>()
+            {
+                Data = response,
+                Message = $"ıd si: {id} olan oyuncu silindi ",
+                StatusCode = System.Net.HttpStatusCode.OK
+            };
+        }
+        catch (NotFoundException ex)
+        {
+            return new ReturnModel<PlayerResponseDto>()
+            {
+            Message = ex.Message,
+            StatusCode= System.Net.HttpStatusCode.NotFound
+            };
+
+        }
     }
 
     public ReturnModel<PlayerResponseDto> GetById(int id)
@@ -65,7 +85,14 @@ public class PlayerService : IPlayerService
 
     public ReturnModel<List<PlayerResponseDto>> GetList()
     {
-        throw new NotImplementedException();
+        var list = _playerRepository.GetAll();
+        List<PlayerResponseDto> response = _mapper.Map<List<PlayerResponseDto>>(list);
+        return new ReturnModel<List<PlayerResponseDto>>()
+        {
+            Data = response,
+            Message = "Oyuncular listelendi.",
+            StatusCode = System.Net.HttpStatusCode.OK
+        };
     }
 
     public ReturnModel<PlayerResponseDto> Update(UpdatePlayerRequestDto requestDto)
