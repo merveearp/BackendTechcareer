@@ -21,5 +21,9 @@ public class PlayerConfiguration : IEntityTypeConfiguration<Player>
         builder.HasOne(p => p.Team);
         builder.HasOne(p => p.Outfit);
         builder.HasOne(p => p.Branch);
+
+        builder.HasData(
+            new Player() { Id = 1, Age = 30, BranchId = 1, Name = "Mauro Icardi", OutfitId = 1, Price = 30000000, TeamId = 1 }
+            );
     }
 }
