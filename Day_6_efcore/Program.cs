@@ -4,6 +4,7 @@ using Day_6_efcore.Repositories.Concrete;
 using Day_6_efcore.Services.Concrete;
 using System.Reflection;
 using Day_6_efcore.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-builder.Services.AddDbContext<BaseDbContext>();
+builder.Services.AddDbContext<BaseDbContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
+});
 //
 //
 builder.Services.AddScoped<IPlayerRepository,PlayerRepository>();

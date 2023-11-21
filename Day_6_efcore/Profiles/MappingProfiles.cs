@@ -11,6 +11,9 @@ public class MappingProfiles : Profile
         CreateMap<CreatePlayerRequestDto, Player>();
         CreateMap<UpdatePlayerRequestDto, Player>();
         CreateMap<Player,PlayerResponseDto>();
+        CreateMap<Branch , BranchDto>();
+        CreateMap<Outfit , OutfitDto>();
+        CreateMap<Team , TeamDto>();
 
     }
 }

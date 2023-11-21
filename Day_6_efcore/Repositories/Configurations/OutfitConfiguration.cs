@@ -16,7 +16,7 @@ public class OutfitConfiguration : IEntityTypeConfiguration<Outfit>
         builder.Property(o => o.No).HasColumnName("outfit_no");
 
 
-            builder.HasOne(o => o.Player);
+            builder.HasOne(o => o.Player).WithOne(c => c.Outfit).HasForeignKey<Player>(o => o.Id);
                 builder.HasData(new Outfit() { Id=1,BrandName="Adidas",No=42,PlayerId=1,Type=OutfitType.Winter});
         }
  

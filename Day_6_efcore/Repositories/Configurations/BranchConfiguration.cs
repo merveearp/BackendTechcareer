@@ -8,7 +8,7 @@ public class BranchConfiguration : IEntityTypeConfiguration<Branch>
 {
     public void Configure(EntityTypeBuilder<Branch> builder)
     {
-        builder.ToTable("Branch_db").HasKey(b => b.Id);
+        builder.ToTable("Branch_db").HasKey(c => c.Id);
         builder.Property(b => b.Id).HasColumnName("branch_id");
         builder.Property(b => b.BranchName).HasColumnName("branch_name");
 

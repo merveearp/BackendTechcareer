@@ -2,6 +2,7 @@
 using Day_6_efcore.Exceptions;
 using Day_6_efcore.Models;
 using Day_6_efcore.Repositories.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace Day_6_efcore.Repositories.Concrete;
 public class PlayerRepository : IPlayerRepository
@@ -33,11 +34,19 @@ public class PlayerRepository : IPlayerRepository
 
     public List<Player> GetAll()
     {
-        return _context.Players.ToList();
+        return _context.Players.
+            Include(X=>X.Team).
+            Include(x=>x.Branch).
+            Include(x=>x.Outfit).ToList();
+           
     }
         public Player? GetById(int id)
     {
-       var player = _context.Players.Find(id);
+       var player = _context.Players.
+            Include(X => X.Team).
+            Include(x => x.Branch).
+            Include(x => x.Outfit).SingleOrDefault(x=>x.Id==id);
+
         if (player is null)
         {
             throw new NotFoundException(id);
